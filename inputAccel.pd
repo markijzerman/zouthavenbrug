@@ -1,4 +1,4 @@
-#N canvas 339 205 228 300 10;
+#N canvas 339 265 342 331 10;
 #X obj 44 38 oscparse;
 #X obj 47 63 list trim;
 #N canvas 244 284 450 307 calibrate 0;
@@ -42,6 +42,7 @@
 #X obj 43 14 netreceive -u -b 9999;
 #X obj 47 85 route accel;
 #X obj 47 109 route Z;
+#X obj 174 119 r calibrateNow;
 #X connect 0 0 1 0;
 #X connect 1 0 11 0;
 #X connect 2 0 4 0;
@@ -54,3 +55,4 @@
 #X connect 11 0 12 0;
 #X connect 12 0 2 0;
 #X connect 12 0 5 0;
+#X connect 13 0 3 0;
