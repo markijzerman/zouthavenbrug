@@ -1,7 +1,7 @@
-#N canvas 80 125 851 597 10;
+#N canvas 227 122 851 597 10;
 #X obj 137 113 sig~;
-#X obj 333 540 dac~;
-#N canvas 2 380 240 198 graph 1;
+#X obj 367 549 dac~;
+#N canvas 2 410 240 198 graph 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array filtered 200 float 0;
 #X coords 0 1 199 -1 200 140 1 0 0;
@@ -44,9 +44,9 @@
 #X connect 7 0 5 0;
 #X connect 8 0 4 0;
 #X restore 59 388 pd graph;
-#X obj 338 512 clip~ -1 1;
+#X obj 344 473 clip~ -1 1;
 #X text 578 313 freqs: 1.277 1.66 3.353;
-#X obj 335 476 cyclone/tanh~;
+#X obj 345 448 cyclone/tanh~;
 #X obj 152 9 inputAccel;
 #X text 7 6 ._.;
 #X text 816 559 ._.;
@@ -272,9 +272,13 @@
 #X connect 9 0 5 0;
 #X restore 81 152 pd recorder;
 #X obj 345 422 *~ 20;
+#X obj 369 500 hip~ 100;
+#X obj 368 521 hip~ 100;
+#X obj 49 28 noise~;
+#X obj 34 65 lop~ 5;
+#X obj 37 93 *~ 0.5;
 #X connect 0 0 47 0;
-#X connect 3 0 1 0;
-#X connect 3 0 1 1;
+#X connect 3 0 49 0;
 #X connect 5 0 3 0;
 #X connect 6 0 22 0;
 #X connect 6 0 25 0;
@@ -317,3 +321,9 @@
 #X connect 46 0 42 0;
 #X connect 47 0 28 0;
 #X connect 48 0 5 0;
+#X connect 49 0 50 0;
+#X connect 50 0 1 0;
+#X connect 50 0 1 1;
+#X connect 51 0 52 0;
+#X connect 52 0 53 0;
+#X connect 53 0 28 0;
